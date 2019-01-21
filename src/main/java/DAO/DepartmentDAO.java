@@ -5,12 +5,11 @@ import Util.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
-public class DepartmentDAO {
+public class DepartmentDAO implements DAO<Department,Integer>{
 
     public void create(Department department)
     {
         Session session = null;
-
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
@@ -64,7 +63,7 @@ public class DepartmentDAO {
         }
     }
 
-    public Department read (int id)
+    public Department read (Integer id)
     {
         Session session = null;
 

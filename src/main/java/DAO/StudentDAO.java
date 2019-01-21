@@ -6,7 +6,7 @@ import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
-public class StudentDAO {
+public class StudentDAO implements DAO<Student,Integer> {
 
     public void create(Student student)
     {
@@ -65,7 +65,7 @@ public class StudentDAO {
         }
     }
 
-    public Student read (int id)
+    public Student read (Integer id)
     {
         Session session = null;
 
